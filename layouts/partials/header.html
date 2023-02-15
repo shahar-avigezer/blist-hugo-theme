@@ -1,4 +1,5 @@
-<header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+<header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative"
+  {{ if (eq .Language.LanguageDirection "rtl") }} dir="rtl" {{ end }}>
   <a href="{{ .Site.Home.Permalink }}" class="capitalize font-extrabold text-2xl">
     {{ if .Site.Params.logo }}
     <img src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}" class="h-8 max-w-full" />
@@ -53,7 +54,7 @@
     <li class="flex items-center">
       {{ range .Site.Languages }}
       {{ if not (eq .Lang $.Site.Language.Lang) }}
-      <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5"
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-2" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5"
         stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <circle cx="12" cy="12" r="9" />

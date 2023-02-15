@@ -1,4 +1,4 @@
-<div class="p-2">
+<div class="p-2" {{ if (eq .Language.LanguageDirection "rtl") }} dir="rtl" {{ end }}>
 <a href="{{ .Permalink }}">
   {{ if .Params.thumbnail }}
   <div class="relative">
