@@ -42,12 +42,31 @@
     margin-top: 0.125rem /* 2px */ !important;
     margin-bottom: 0.125rem /* 2px */ !important;
   }
-  details.toc ul li:before {
-    @apply rounded-none bg-gray-400;
-  }
+  
   details.toc ul li a {
     @apply no-underline text-gray-200 text-base;
   }
+
+  .prose {
+    @apply font-thin text-gray-300;
+  }
+
+  .prose.rtl ul {
+    @apply list-disc list-inside;
+    direction:rtl;
+}
+
+  .prose.rtl ul li {
+      direction:rtl;
+  }
+
+  .prose.rtl blockquote {
+    @apply border-l-0 border-r-2 pr-4 border-gray-400;	
+}
+
+  .prose.rtl ul li::before {
+    display: none;
+}
 
   a:empty {
     display: none;
