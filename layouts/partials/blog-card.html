@@ -3,16 +3,20 @@
 {{ if .Params.external }} target="_blank" {{ end }}>
   {{ if .Params.thumbnail }}
   <div class="relative">
-    <img src="{{ .Params.thumbnail }}" alt="{{ .Params.title }}" class="rounded-lg shadow-sm w-full h-52 object-cover" />
+    <img src="{{ .Params.thumbnail }}" alt="{{ .Params.title }}" class="rounded-lg shadow-sm w-full h-52 object-cover
+    {{ if .Params.thumbnailPosition }} object-{{ .Params.thumbnailPosition }} {{ end }}" />
     {{ if not (or (or .Site.Params.hideMeta .Params.hideMeta) false) }}
-    <div class="absolute top-4 right-4 rounded shadow bg-gray-900 text-white text-sm px-2 py-0.5">
-      {{ partial "date.html" (dict "date" .Date "language" $.Page.Language "format" "short") }}
-    </div>
+    {{ if .Params.logo }}
+    <img src="{{ .Params.logo }}" alt="{{ .Params.title }}" class="rounded-lg shadow-sm h-16 absolute bottom-2 left-2" />
+    {{ end }}
+<!--    <div class="absolute top-4 right-4 rounded shadow bg-gray-900 text-white text-sm px-2 py-0.5">-->
+<!--      {{ partial "date.html" (dict "date" .Date "language" $.Page.Language "format" "short") }}-->
+<!--    </div>-->
     {{ end }}
   </div>
   {{ end }}
   <div class="my-2 text-xl font-semibold">
-    {{ if .Params.external }}🔗 {{ end }}{{ .Params.title }}
+    {{ if .Params.podcast }}🎧 {{ else }}{{ if .Params.external }}🔗 {{ end }}{{ end }}{{ .Params.title }}
   </div>
   <div class="font-thin">{{ .Params.description }}</div>
 </a>
