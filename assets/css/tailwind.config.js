@@ -80,7 +80,7 @@ module.exports = {
               },
               pre: {
                 color: theme("colors.gray.200"),
-                backgroundColor: theme("colors.gray.600"),
+                backgroundColor: theme("colors.gray.700"),
               },
               thead: {
                 color: theme("colors.white"),

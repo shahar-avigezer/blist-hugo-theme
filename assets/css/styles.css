@@ -42,7 +42,7 @@
     margin-top: 0.125rem /* 2px */ !important;
     margin-bottom: 0.125rem /* 2px */ !important;
   }
-  
+
   details.toc ul li a {
     @apply no-underline text-gray-200 text-base;
   }
@@ -61,7 +61,7 @@
   }
 
   .prose.rtl blockquote {
-    @apply border-l-0 border-r-2 pr-4 border-gray-400;	
+    @apply border-l-0 border-r-2 pr-4 border-gray-400;
 }
 
   .prose.rtl ul li::before {
